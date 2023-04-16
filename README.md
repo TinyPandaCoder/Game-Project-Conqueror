@@ -10,7 +10,7 @@
 # Winning/Loosing
   The player will win if he managed to conquer all cities available in the game under the determined amounts of turns. If these turns passed and the player did not     achieve this goal, this is
   considered a loss.
-Conquering a city
+# Conquering a city
 Each city has an army that defends it from conquerors. The player needs to build a powerful
 army and defeat the defending army in order to take control over the city. Once the attacking
 army reaches the city, it can either lay siege on the target city trying to starve them out or
@@ -27,25 +27,24 @@ armies is completely destroyed. In all cases, only the attacked unit receives da
 some of its soldiers lost during the attack. The attacking unit does not receive any damage
 in the process. In the manual mode, the battle starts by the player choosing one of his units
 to attack another unit in the defending army followed by a random unit from the defending
-1
 army attack another random unit from the player’s army and so on till one of the two armies is
 destroyed. Once the city’s defending army is defeated, the player takes control over it and can
 build any building or recruit any unit inside it.
-Available resources
+#Available resources
 Throughout his journey of conquering the world, the player has two major resources that he
 can spend in order to achieve his goal namely gold and food.
-1. Gold is the main resource needed to build or upgrade any building and also to recruit
+### 1. Gold is the main resource needed to build or upgrade any building and also to recruit
 units. Gold will also be used to maintain and upkeep any army the player controls. The
 player has to pay a certain amount of gold each turn for this purpose. If the player does
 not have enough gold to maintain/upkeep his army, soldiers in his armies will gradually
 lose faith and leave the army each turn until the player has enough gold to maintain his
 army again.
-2. Food, on the other hand, is used to keep the soldiers in the player’s army alive. All
+### 2. Food, on the other hand, is used to keep the soldiers in the player’s army alive. All
 soldiers consume a certain amount of food each turn. They consume more while marching
 to a city and will consume the most while besieging the city. If the player does not have
 sufficient amount of food for all of his soldiers, they will gradually die each turn until he
 has enough food again to feed his army.
-Buildings
+# Buildings
 The player can build multiple types of buildings to help him achieving his goal of conquering
 the world. There are two types of buildings, economic and military. Economic buildings help
 the player build his economy as well as provide enough food supplies for his army. Military
@@ -54,14 +53,14 @@ units. Buildings can be upgraded to enhance their effects. The higher the level 
 the better its outcome. Each turn, the player can only do one action per building. Either
 building it, upgrading it or recruit units from it (for military buildings). Military buildings also
 have a max number of units that can be recruited from them per turn.
-0.1 Economic Buildings
+## 0.1 Economic Buildings
 1. Markets: these buildings are the source of gold for the player. The more markets he
 controls, the more profit he gains hence, the bigger his treasury is. The gained profit can
 be used in constructing other buildings, upgrading them and recruit units.
 2. Farms: They provide the food supplies of the army. The bigger the army, the bigger the
 supply it will need. The player will need to balance the size of his army and the supplies
 he can provide to his army
-0.2 Military Buildings and units
+## 0.2 Military Buildings and units
 1. Archery Range: This building will enable the player to recruit archers. Archers can attack
 from range using their bows. They have great advantage over foot units but greatly
 2
