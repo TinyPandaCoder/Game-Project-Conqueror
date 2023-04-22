@@ -1,5 +1,5 @@
 package buildings;
-
+import exceptions.*;
 abstract public class Building {
 	public int getLevel() {
 		return level;
@@ -33,11 +33,28 @@ abstract public class Building {
 	private int level = 1; 
 	private int upgradeCost; 
 	private boolean coolDown = true;
-	
+	final int MAX_LEVEL = 3;
 	public Building(int cost , int upgradeCost) {
 		this.cost = cost;
 		this.upgradeCost = upgradeCost;
 	}
+        
+        
+        // every subclass will implement this method and call the super upgrade method
+        // the super upgrade should update the level 
+        public void upgrade() throws BuildingInCoolDownException, MaxLevelException{
+            if(isCoolDown()){
+                throw   new BuildingInCoolDownException("Building is cooling down");
+            }
+            
+            if(getLevel() > MAX_LEVEL){
+                throw new MaxLevelException("You exceeded the maximum number of levels");
+            }
+            
+            setLevel(getLevel() + 1);
+            
+            
+        }
 	
 	
 	
