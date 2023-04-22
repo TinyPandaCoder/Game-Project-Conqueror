@@ -39,14 +39,14 @@ MaxRecruitedException{
                 throw new MaxRecruitedException("Exceeded the number of maximum recruit");
             }
             
-            Cavalry archer = new Cavalry(getLevel() , (int)Game.levelValuesCavalry[getLevel() - 1][0]
+            Cavalry cavalry = new Cavalry(getLevel() , (int)Game.levelValuesCavalry[getLevel() - 1][0]
             ,Game.levelValuesCavalry [getLevel() - 1][1]
             ,Game.levelValuesCavalry [getLevel() - 1][2]
             ,Game.levelValuesCavalry [getLevel() - 1][3]);
             
             setCurrentRecruit(getCurrentRecruit() + 1);
             
-            return (Unit)archer;
+            return (Unit)cavalry;
             
             
         }

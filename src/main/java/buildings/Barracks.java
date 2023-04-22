@@ -38,14 +38,14 @@ MaxRecruitedException{
                 throw new MaxRecruitedException("Exceeded the number of maximum recruit");
             }
             
-            Infantry archer = new Infantry(getLevel() , (int)Game.levelValuesInfanrty[getLevel() - 1][0]
+            Infantry infantry = new Infantry(getLevel() , (int)Game.levelValuesInfanrty[getLevel() - 1][0]
             ,Game.levelValuesInfanrty [getLevel() - 1][1]
             ,Game.levelValuesInfanrty [getLevel() - 1][2]
             ,Game.levelValuesInfanrty [getLevel() - 1][3]);
             
             setCurrentRecruit(getCurrentRecruit() + 1);
             
-            return (Unit)archer;
+            return (Unit)infantry;
             
             
         }
