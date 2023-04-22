@@ -8,7 +8,7 @@ public class Army {
 	private int distancetoTarget = -1;
 	private String target = "";
 	private String currentLocation;
-	private int maxToHold = 10;
+	private final int maxToHold = 10;
 	public Army(String currentLocation) {
 		this.currentLocation = currentLocation;
 	}
@@ -45,4 +45,16 @@ public class Army {
 	public int getMaxToHold() {
 		return maxToHold;
 	}
+        public void handleAttack(Unit unit)
+        {
+            if (unit.getCurrentSoldierCount()<=0)
+            {
+                 ArrayList<Unit> newUnits=new ArrayList<Unit>();
+                 newUnits=getUnits();
+                 newUnits.remove((unit));
+                 setUnits(newUnits);
+            }
+        }
+
+
 }
