@@ -30,6 +30,8 @@ public class Farm extends EconomicBuilding {
                 case 3 :
                     gold = 1000;
                     break;
+                default:
+                    break;
                 
             }
             return gold;

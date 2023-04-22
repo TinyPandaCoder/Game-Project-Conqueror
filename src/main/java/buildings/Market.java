@@ -32,6 +32,8 @@ public class Market extends EconomicBuilding{
                 case 3 :
                     gold = 2000;
                     break;
+                default:
+                    break;
                 
             }
             return gold;
