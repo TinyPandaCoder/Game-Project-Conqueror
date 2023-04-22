@@ -16,4 +16,24 @@ public class Market extends EconomicBuilding{
             
             
         }
+        
+        @Override
+        public int harvest(){
+            
+            int gold = 0;
+            
+            switch(getLevel()){
+                case 1 :
+                    gold = 1000;
+                    break;
+                case 2 :
+                    gold = 1500;
+                    break;
+                case 3 :
+                    gold = 2000;
+                    break;
+                
+            }
+            return gold;
+        }
 }
