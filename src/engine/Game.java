@@ -9,12 +9,26 @@ public class Game {
 	private ArrayList<Distance> distances;
 	private final int maxTurnCount = 30;
 	private int currentTurnCount = 1;
+
 	public Game(String playerName,String playerCity) throws IOException{
 		this.player = new Player(playerName);
 		City city = new City(playerCity);
 		this.availableCities.add(city);
+		
 	}
-	public Player getPlayer() {
+	private void loadCitiesAndDistances() throws IOException
+	{
+		ArrayList<String[]> arr = ReadingCSVFile.readFile("Distances.csv");
+		for (String[] it : arr)
+		{
+			for (String x : it)
+			{
+				System.out.print(x+' ');
+			}
+			System.out.println();
+		}
+	}
+	public Player getPlayer(){
 		return player;
 	}
 	public void setPlayer(Player player) {

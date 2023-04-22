@@ -1,7 +1,7 @@
 
 package exceptions;
 
-public class NotEnoughGoldException extends Exception  {
+public class NotEnoughGoldException extends EmpireException  {
 
     public NotEnoughGoldException() {
     }

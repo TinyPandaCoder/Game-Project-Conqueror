@@ -1,7 +1,7 @@
 
 package exceptions;
 
-public class MaxRecruitedException extends Exception {
+public class MaxRecruitedException extends EmpireException {
 
     public MaxRecruitedException() {
     }
