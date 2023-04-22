@@ -43,16 +43,23 @@ abstract public class Building {
         // every subclass will implement this method and call the super upgrade method
         // the super upgrade should update the level 
         public void upgrade() throws BuildingInCoolDownException, MaxLevelException{
+            
             if(isCoolDown()){
                 throw   new BuildingInCoolDownException("Building is cooling down");
             }
             
-            if(getLevel() > MAX_LEVEL){
+            
+            //which means that after upgradding its level will exceed the maximum number of levels
+            if(getLevel() == MAX_LEVEL){
                 throw new MaxLevelException("You exceeded the maximum number of levels");
             }
             
             setLevel(getLevel() + 1);
             
+            
+            //update coolDown value after performing the action
+            
+            setCoolDown(true);
             
         }
 	
