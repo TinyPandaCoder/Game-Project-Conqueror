@@ -3,9 +3,9 @@ import java.io.IOException;
 import java.util.ArrayList; 
 import units.*;
 public class Game {
-        private final double [][]levelValuesArcher={{60,0.4,0.5,0.6},{60,0.4,0.5,0.6},{70,0.5,0.6,0.7}};
-        private final double [][]levelValuesInfanrty={{50,0.5,0.6,0.7},{50,0.5,0.6,0.7},{60,0.6,0.7,0.8}};
-        private final double [][]levelValuesCavalry={{40,0.6,0.7,0.75},{40,0.6,0.6,0.75},{60,0.7,0.8,0.9}};
+        private public double [][]levelValuesArcher={{60,0.4,0.5,0.6},{60,0.4,0.5,0.6},{70,0.5,0.6,0.7}};
+        private public double [][]levelValuesInfanrty={{50,0.5,0.6,0.7},{50,0.5,0.6,0.7},{60,0.6,0.7,0.8}};
+        private public double [][]levelValuesCavalry={{40,0.6,0.7,0.75},{40,0.6,0.6,0.75},{60,0.7,0.8,0.9}};
 
 	private Player player;
 	private ArrayList<City> availableCities;
