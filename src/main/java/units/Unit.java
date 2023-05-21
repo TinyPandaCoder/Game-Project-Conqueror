@@ -1,5 +1,7 @@
 package units;
 
+import exceptions.FriendlyFireException;
+
 abstract public class Unit {
 	private int level;
 	private int maxSoldierCount;
@@ -7,6 +9,7 @@ abstract public class Unit {
 	private double idleUpkeep;
 	private double marchingUpkeep;
 	private double siegeUpkeep;
+        private Army parentArmy;        
 	public Unit(int level, int maxSoldierCount, double idleUpkeep, double marchingUpkeep,
 			double siegeUpkeep) {
 		this.level = level;
@@ -15,6 +18,13 @@ abstract public class Unit {
 		this.marchingUpkeep = marchingUpkeep;
 		this.siegeUpkeep = siegeUpkeep;
 	}
+        public void setParentArmy(Army parentArmy) {
+            this.parentArmy = parentArmy;
+        }
+
+        public Army getParentArmy() {
+            return parentArmy;
+        }
 	public int getCurrentSoldierCount() {
 		return currentSoldierCount;
 	}
@@ -36,6 +46,22 @@ abstract public class Unit {
 	public double getSiegeUpkeep() {
 		return siegeUpkeep;
 	}
-	
-	
+        public abstract double unitFactor(Unit target, int level);
+	public void attack(Unit target) throws FriendlyFireException
+        {
+            if (this.getParentArmy().equals(target.getParentArmy())){
+                throw new FriendlyFireException("You cannot attack a friendly unit");
+            }
+            else
+            {
+                target.setCurrentSoldierCount(target.currentSoldierCount - (int) 
+                        (this.currentSoldierCount * this.unitFactor(target, this.level)));
+                target.getParentArmy().handleAttack(target);
+                
+            }
+                
+        }
+        
+
+        
 }
