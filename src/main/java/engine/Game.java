@@ -17,6 +17,14 @@ public class Game {
                 loadArmy(playerCity);
                 loadCitiesAndDistances();
 	}
+        public static int findCity(String cityName, ArrayList<City> availableCities)  {
+            for (int i=0;i<availableCities.size();i++ )
+            {
+                if (availableCities.get(i).getName().equals(cityName))
+                    return i;
+            }
+            return -1;
+        }
         private void loadCitiesAndDistances() throws IOException
         {
            ArrayList<String[]> citiesDistances = ReadingCSVFile.readFile("./Resources/Distances.csv");
