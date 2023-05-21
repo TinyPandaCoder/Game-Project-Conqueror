@@ -1,4 +1,6 @@
 package engine;
+import buildings.EconomicBuilding;
+import buildings.MilitaryBuilding;
 import java.io.IOException;
 import java.util.ArrayList; 
 import units.*;
@@ -88,6 +90,103 @@ public class Game {
                 availableCities.set(i,city);
             }
         }
+        
+        public void targetCity(Army army, String targetName){
+            
+            if(army.getCurrrentStatus().toString().equals("MARCHING")){
+                return;
+            }
+            
+            army.setTarget(targetName);
+            
+            army.setCurrentStatus(Status.MARCHING);
+            
+            for(Distance distance : distances){
+                if(distance.getFrom().equals(army.getCurrentLocation()) 
+                        && distance.getFrom().equals(targetName)){
+                    army.setDistancetoTarget(distance.getDistance());
+                }
+            }
+            
+            
+        }
+        
+        public void endTurn(){
+            
+            
+            this.currentTurnCount++;
+            
+            ArrayList<City> cities = this.player.getControlledCities();
+            
+            for(City city : cities){
+                ArrayList<EconomicBuilding> ecoBuildings = city.getEconomicalBuildings();
+                ArrayList<MilitaryBuilding> milBuildings = city.getMilitaryBuildings();
+                
+                
+                
+                
+                for(var ecoBuilding : ecoBuildings){
+                    ecoBuilding.setCoolDown(false);
+                    int gold = ecoBuilding.harvest();
+                    
+                    this.player.setTreasury(this.player.getTreasury() + gold);
+                }
+                
+                for(var milBuilding : milBuildings){
+                    milBuilding.setCoolDown(false);
+                    
+                    milBuilding.setCurrentRecruit(0);
+                }
+            }
+            
+            
+            ArrayList<Army> armies = this.player.getControlledArmies();
+            
+            double food = 0;
+            
+            for(Army army : armies){
+                food += army.foodNeeded();
+                
+                if(army.getDistancetoTarget() > 0){
+                    army.setDistancetoTarget(army.getDistancetoTarget() - 1);
+                    
+                    if(army.getDistancetoTarget() == 0){
+                        army.setCurrentLocation(army.getTarget());
+                        army.setCurrentStatus(Status.IDLE);
+                        army.setTarget("");
+                        
+                    }
+                }
+            }
+            if(this.player.getFood() >= food){
+                    this.player.setFood(this.player.getFood() - food);
+            }else{
+                this.player.loseArmy();
+            }
+            
+            
+        }
+        
+        // TODO
+        void handleSiege(City city){
+            if(city.getTurnsUnderSiege() == 3){
+                
+                city.setUnderSiege(false);
+            }else{
+                
+                city.setTurnsUnderSiege(city.getTurnsUnderSiege() + 1);
+            }
+        }
+        // TODO
+        void updateCityUnderSiege(){
+            
+            for(City city : availableCities){
+                if(city.isUnderSiege()){
+                    
+                }
+            }
+        }
+        
 	public Player getPlayer() {
 		return player;
 	}

@@ -16,7 +16,7 @@ public class Army {
 	public Status getCurrrentStatus() {
 		return currentStatus;
 	}
-	public void setCurrrentStatus(Status currrentStatus) {
+	public void setCurrentStatus(Status currrentStatus) {
 		this.currentStatus = currrentStatus;
 	}
 	public ArrayList<Unit> getUnits() {

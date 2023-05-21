@@ -144,14 +144,22 @@ public class Player {
             if (!army.getCurrentLocation().equals(city.getName()))
                 throw new TargetNotReachedException("Target not reached.");
             army.setTarget(city.getName());
-            army.setCurrrentStatus(Status.BESIEGING);
+            army.setCurrentStatus(Status.BESIEGING);
             city.setUnderSiege(true);
                     
             
             
         }
 	
-        
+        void loseArmy(){
+            for(var army : controlledArmies){
+                ArrayList<Unit> units = army.getUnits();
+                
+                for(Unit unit : units){
+                    unit.setCurrentSoldierCount((int)(unit.getCurrentSoldierCount() * 0.9));
+                }
+            }
+        }
         
         public void initiateArmy(City city,Unit unit){
             Army army = new Army(city.getName());
