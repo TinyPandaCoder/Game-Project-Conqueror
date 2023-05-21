@@ -63,16 +63,19 @@ public class Game {
                             case "Archer":
                                 Archer archer;
                                 archer = new Archer(level,(int)levelValuesArcher[level-1][0],levelValuesArcher[level-1][1],levelValuesArcher[level-1][2],levelValuesArcher[level-1][3]);
+                                archer.setParentArmy(army);
                                 cityUnits.add(archer);
                                 break;
                             case "Cavalry":
                                 Cavalry cavalry;
                                 cavalry = new Cavalry(level,(int)levelValuesCavalry[level-1][0],levelValuesCavalry[level-1][1],levelValuesCavalry[level-1][2],levelValuesCavalry[level-1][3]);
+                                cavalry.setParentArmy(army);
                                 cityUnits.add(cavalry);
                                 break;
                             case "Infantry":
                                 Infantry infantry;
                                 infantry = new Infantry(level,(int)levelValuesInfanrty[level-1][0],levelValuesInfanrty[level-1][1],levelValuesInfanrty[level-1][2],levelValuesInfanrty[level-1][3]);
+                                infantry.setParentArmy(army);
                                 cityUnits.add(infantry);
                                 break;
                             default:
@@ -106,5 +109,6 @@ public class Game {
 	public int getMaxTurnCount() {
 		return maxTurnCount;
 	}
+
 	
 }
