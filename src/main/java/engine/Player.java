@@ -151,4 +151,19 @@ public class Player {
             
         }
 	
+        
+        
+        public void initiateArmy(City city,Unit unit){
+            Army army = new Army(city.getName());
+            
+            ArrayList<Unit> units = army.getUnits();
+            
+            units.add(unit);
+            
+            city.getDefendingArmy().getUnits().remove(unit);
+            
+            unit.setParentArmy(army);
+            
+            controlledArmies.add(army);
+        }
 }
