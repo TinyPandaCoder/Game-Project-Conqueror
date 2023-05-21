@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author abdo
- *
- */
-module Conqueror {
-}
