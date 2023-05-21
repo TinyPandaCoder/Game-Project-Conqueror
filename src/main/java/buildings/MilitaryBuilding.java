@@ -36,4 +36,7 @@ abstract public class MilitaryBuilding extends Building {
         
         public abstract Unit recruit() throws BuildingInCoolDownException,
 MaxRecruitedException;
+        
+        
+        public abstract String getUnitTypeName();
 }

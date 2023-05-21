@@ -25,6 +25,7 @@ public class Game {
             }
             return -1;
         }
+        
         private void loadCitiesAndDistances() throws IOException
         {
            ArrayList<String[]> citiesDistances = ReadingCSVFile.readFile("./Resources/Distances.csv");
