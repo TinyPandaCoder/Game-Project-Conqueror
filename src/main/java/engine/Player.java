@@ -1,12 +1,11 @@
 package engine;
 
 import buildings.*;
+import exceptions.*;
 import static engine.Game.findCity;
-import exceptions.BuildingInCoolDownException;
-import exceptions.MaxLevelException;
-import exceptions.NotEnoughGoldException;
 import java.util.ArrayList;
 import units.Army;
+import units.Status;
 public class Player {
 	private String name;
 	private ArrayList<City> controlledCities;
@@ -101,6 +100,19 @@ public class Player {
             b.upgrade();
 
         }
- 
+        public void laySiege(Army army,City city) throws TargetNotReachedException,
+        FriendlyCityException
+        {
+            if (this.controlledCities.contains(city))
+                throw new FriendlyCityException("You can't attack friendly city.");
+            if (!army.getCurrentLocation().equals(city.getName()))
+                throw new TargetNotReachedException("Target not reached.");
+            army.setTarget(city.getName());
+            army.setCurrrentStatus(Status.BESIEGING);
+            city.setUnderSiege(true);
+                    
+            
+            
+        }
 	
 }
