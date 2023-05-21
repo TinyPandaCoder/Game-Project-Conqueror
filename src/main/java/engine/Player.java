@@ -2,6 +2,8 @@ package engine;
 
 import buildings.*;
 import static engine.Game.findCity;
+import exceptions.BuildingInCoolDownException;
+import exceptions.MaxLevelException;
 import exceptions.NotEnoughGoldException;
 import java.util.ArrayList;
 import units.Army;
@@ -90,7 +92,15 @@ public class Player {
             }
             
         }
+        public void upgradeBuilding(Building b) throws NotEnoughGoldException,
+        BuildingInCoolDownException, MaxLevelException
+        {
+            if(b.getUpgradeCost()>this.treasury)
+                throw new NotEnoughGoldException("You don't have enough gold.");
+            this.treasury-=b.getUpgradeCost();
+            b.upgrade();
 
+        }
  
 	
 }

@@ -48,7 +48,7 @@ abstract public class Building {
                 throw   new BuildingInCoolDownException("Building is cooling down");
             }
             
-            
+
             //which means that after upgradding its level will exceed the maximum number of levels
             if(getLevel() == MAX_LEVEL){
                 throw new MaxLevelException("You exceeded the maximum number of levels");
