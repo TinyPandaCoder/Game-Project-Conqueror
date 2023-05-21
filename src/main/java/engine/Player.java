@@ -1,21 +1,14 @@
 package engine;
 
 import buildings.*;
-<<<<<<< HEAD
 import exceptions.*;
-=======
-
 import exceptions.BuildingInCoolDownException;
 import exceptions.MaxRecruitedException;
->>>>>>> cba0d471a0e0a7564466c298bc9f0e81205bbb20
 import static engine.Game.findCity;
 import java.util.ArrayList;
 import units.Army;
-<<<<<<< HEAD
 import units.Status;
-=======
 import units.Unit;
->>>>>>> cba0d471a0e0a7564466c298bc9f0e81205bbb20
 public class Player {
 	private String name;
 	private ArrayList<City> controlledCities;
@@ -66,7 +59,7 @@ BuildingInCoolDownException, MaxRecruitedException, NotEnoughGoldException{
                     break;
                 }
             }
-            
+       
             
             
             if(militaryIndex == -1){
