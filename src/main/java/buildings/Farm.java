@@ -6,7 +6,6 @@ public class Farm extends EconomicBuilding {
 	}
         
         
-        @Override
         public void upgrade() throws BuildingInCoolDownException, MaxLevelException{
             super.upgrade();
             
@@ -19,7 +18,6 @@ public class Farm extends EconomicBuilding {
         public int harvest(){
             
             int gold = 0;
-            
             switch(getLevel()){
                 case 1 :
                     gold = 500;

@@ -7,7 +7,7 @@ import units.Archer;
 import units.Unit;
 import engine.Game;
 public class ArcheryRange extends MilitaryBuilding {
-	ArcheryRange(){
+	public ArcheryRange(){
 		super(1500 , 800 , 400);
 	}
         

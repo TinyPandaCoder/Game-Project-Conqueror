@@ -4,7 +4,7 @@ import exceptions.BuildingInCoolDownException;
 import exceptions.MaxLevelException;
 
 public class Market extends EconomicBuilding{
-	Market(){
+	public Market(){
 		super(1500 , 700);
 	}
         
