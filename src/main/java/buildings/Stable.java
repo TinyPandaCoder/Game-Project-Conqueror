@@ -50,4 +50,8 @@ MaxRecruitedException{
             
             
         }
+    
+   public String getUnitTypeName(){
+        return "Cavalry";
+    }
 }

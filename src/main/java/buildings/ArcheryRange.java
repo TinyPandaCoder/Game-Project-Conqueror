@@ -48,4 +48,8 @@ MaxRecruitedException{
             
             
         }
+        
+    public String getUnitTypeName(){
+        return "Archer";
+    }
 }

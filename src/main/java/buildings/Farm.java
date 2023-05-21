@@ -1,7 +1,7 @@
 package buildings;
 import exceptions.*;
 public class Farm extends EconomicBuilding {
-	Farm(){
+	public Farm(){
 		super(1000 , 500);
 	}
         

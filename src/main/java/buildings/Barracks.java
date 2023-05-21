@@ -50,5 +50,10 @@ MaxRecruitedException{
             
         }
         
+    public String getUnitTypeName(){
+        return "Infantry";
         
+    }
+    
+    
 }
